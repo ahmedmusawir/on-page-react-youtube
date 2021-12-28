@@ -10,20 +10,20 @@ import AjaxInsertPage from './pages/AjaxInsertPage';
 function ReactAppThemeThree() {
   return (
     <HashRouter>
-      <MainNavbar />
+      {/* <MainNavbar /> */}
       <main>
         <Switch>
           <Route exact path='/'>
-            <HomePage />
+            {/* <HomePage /> */}
           </Route>
           <Route exact path='/ajax-insert'>
-            <AjaxInsertPage />
+            {/* <AjaxInsertPage /> */}
           </Route>
           <Route exact path='/page1'>
-            <ReactAppThemOne />
+            {/* <ReactAppThemOne /> */}
           </Route>
           <Route exact path='/page2'>
-            <ReactAppThemeTwo />
+            {/* <ReactAppThemeTwo /> */}
           </Route>
           <Route path='/*'>
             <NotFound />

@@ -66,11 +66,6 @@ var jsDIST = './assets/dist/js/';
 
 var jsFILES = [jsSRC, googleMapSRC];
 
-// The following can be enabled to run React Scripts or any other ES6 Scripts
-// var jsReactSRC = 'script-react.js';
-// var jsReactSRC2 = 'script-react-2.js';
-// var jsFILES = [ jsSRC, jsReactSRC, jsReactSRC2 ];
-
 /**
  *
  * JS Minification & Compilation
