@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 function MainNavbar(props) {
   return (
@@ -11,21 +11,21 @@ function MainNavbar(props) {
 
         <div className='collapse navbar-collapse' id='navbarNav'>
           <ul className='navbar-nav'>
-            {/* <li className='nav-item'>
+            <li className='nav-item'>
               <NavLink to={'/page1'} className='nav-link'>
                 Page 1
               </NavLink>
-            </li> */}
-            {/* <li className='nav-item'>
+            </li>
+            <li className='nav-item'>
               <NavLink to={'/page2'} className='nav-link'>
                 Page 2
               </NavLink>
-            </li> */}
-            {/* <li className='nav-item'>
+            </li>
+            <li className='nav-item'>
               <NavLink to={'/ajax-insert'} className='nav-link'>
                 WP Ajax Insert
               </NavLink>
-            </li> */}
+            </li>
           </ul>
         </div>
       </section>
