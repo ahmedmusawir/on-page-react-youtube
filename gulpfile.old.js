@@ -8,14 +8,12 @@ var rename = require('gulp-rename');
 var scss = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var sourcemaps = require('gulp-sourcemaps');
+// var postcss = require('gulp-postcss');
 var browserify = require('browserify');
 var babelify = require('babelify');
 var source = require('vinyl-source-stream');
 var buffer = require('vinyl-buffer');
-var reactify = require('reactify');
-var streamify = require('gulp-streamify');
-const uglify = require('gulp-terser');
-// var uglify = require('gulp-uglify'); // THIS DOESN'T WORK WITH REACT
+var uglify = require('gulp-uglify');
 
 /**
  *
@@ -68,11 +66,6 @@ var jsDIST = './assets/dist/js/';
 
 var jsFILES = [jsSRC, googleMapSRC];
 
-// The following can be enabled to run React Scripts or any other ES6 Scripts
-// var jsReactSRC = 'script-react.js';
-// var jsReactSRC2 = 'script-react-2.js';
-// var jsFILES = [ jsSRC, jsReactSRC, jsReactSRC2 ];
-
 /**
  *
  * JS Minification & Compilation
@@ -84,13 +77,12 @@ function js(done) {
     return browserify({
       entries: [jsFolder + singleJSFile],
     })
-      .transform([babelify, reactify], { presets: ['@babel/preset-env'] })
+      .transform(babelify, { presets: ['@babel/preset-env'] })
       .bundle()
       .pipe(source(singleJSFile))
       .pipe(rename({ extname: '.min.js' }))
       .pipe(buffer())
       .pipe(sourcemaps.init({ loadMaps: true }))
-      .pipe(streamify(uglify()))
       .pipe(sourcemaps.write('./'))
       .pipe(gulp.dest(jsDIST));
   });
